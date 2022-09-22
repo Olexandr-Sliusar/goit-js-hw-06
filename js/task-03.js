@@ -15,8 +15,8 @@ const images = [
 
 const navGalaryEl = document.querySelector('.gallery');
 
-const ElenmentsToAdd = images.map(img => {
+const elenmentsToAdd = images.map(img => {
   return `<li class="gallery__item"><img src="${img.url}" alt="${img.alt}"></li>`;
 });
 
-navGalaryEl.insertAdjacentHTML('afterbegin', ElenmentsToAdd.join(''));
+navGalaryEl.insertAdjacentHTML('afterbegin', elenmentsToAdd.join(''));

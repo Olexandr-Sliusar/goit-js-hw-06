@@ -10,7 +10,6 @@ function counterActions(event) {
     return;
   }
 
-  counterValue = Number(counterValueEl.textContent);
   const action = event.target.dataset.action;
 
   if (action === 'decrement') counterValue -= 1;

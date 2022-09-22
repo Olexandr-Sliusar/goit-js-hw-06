@@ -3,6 +3,7 @@ const refs = {
   navControlsEl: document.getElementById('controls'),
   navCountInput: document.querySelector('#controls>input'),
 };
+let sizeElement = 30;
 
 refs.navControlsEl.addEventListener('click', onControlsActions);
 
@@ -27,19 +28,21 @@ function onControlsActions(event) {
 }
 
 function onCreateElements(countElementsToAdd) {
-  const ElenmentsToAdd = [];
+  const elenmentsToAdd = [];
   for (let index = 0; index < countElementsToAdd; index++) {
     const element = document.createElement('div');
-    element.style.width = `${30 + index * 10}px`;
-    element.style.height = `${30 + index * 10}px`;
+    element.style.width = `${sizeElement}px`;
+    element.style.height = `${sizeElement}px`;
     element.style.backgroundColor = getRandomHexColor();
-    ElenmentsToAdd.push(element);
+    elenmentsToAdd.push(element);
+    sizeElement += 10;
   }
-  refs.navBoxesEl.append(...ElenmentsToAdd);
+  refs.navBoxesEl.append(...elenmentsToAdd);
 }
 
 function onDestroy() {
   refs.navBoxesEl.innerHTML = '';
+  sizeElement = 30;
 }
 
 function getRandomHexColor() {
